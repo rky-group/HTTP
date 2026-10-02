@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RKY Group of Companies | Global Corporate Homepage</title>
+
     <style>
         /* Corporate Design System */
         :root {
@@ -234,7 +235,9 @@
         }
 
         @media (max-width: 768px) {
-            .gov-content { grid-template-columns: 1fr; }
+            .gov-content {
+                grid-template-columns: 1fr;
+            }
         }
 
         .gov-text h3 {
@@ -246,6 +249,148 @@
         .gov-text p {
             color: var(--text-muted);
             margin-bottom: 20px;
+        }
+
+        /* =====================================================
+           ABOUT THE FOUNDER
+           New section only
+        ===================================================== */
+
+        .founder-section {
+            position: relative;
+            min-height: 760px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background-color: #101c27;
+            color: var(--white);
+        }
+
+        /*
+         * Founder photograph.
+         *
+         * Place founder.jpg in the same folder
+         * as index.html.
+         */
+
+        .founder-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background-image: url("founder.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            filter: grayscale(100%);
+            opacity: 0.58;
+
+            transform: scale(1.03);
+
+            z-index: 0;
+        }
+
+        /*
+         * Dark overlay keeps the photograph visible
+         * while maintaining readability.
+         */
+
+        .founder-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(10, 20, 29, 0.96) 0%,
+                    rgba(15, 26, 36, 0.86) 42%,
+                    rgba(15, 26, 36, 0.65) 72%,
+                    rgba(15, 26, 36, 0.72) 100%
+                );
+
+            z-index: 1;
+        }
+
+        .founder-content {
+            position: relative;
+            z-index: 2;
+
+            width: 100%;
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 100px 20px;
+        }
+
+        .founder-text {
+            max-width: 780px;
+        }
+
+        .founder-text .founder-meta {
+            color: var(--premium-gold);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .founder-text h2 {
+            font-size: 46px;
+            line-height: 1.15;
+            margin-bottom: 25px;
+            color: var(--white);
+            letter-spacing: 0.5px;
+        }
+
+        .founder-text h3 {
+            font-size: 22px;
+            line-height: 1.5;
+            font-weight: 400;
+            color: var(--premium-gold);
+            margin-bottom: 30px;
+        }
+
+        .founder-text p {
+            font-size: 17px;
+            line-height: 1.9;
+            color: #d9e1e8;
+            margin-bottom: 22px;
+        }
+
+        .founder-text strong {
+            color: var(--white);
+        }
+
+        .founder-quote {
+            margin-top: 38px;
+            padding: 25px 30px;
+
+            border-left: 3px solid var(--premium-gold);
+
+            background: rgba(255, 255, 255, 0.055);
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.15);
+
+            font-size: 21px;
+            line-height: 1.6;
+            color: var(--white);
+            font-style: italic;
+        }
+
+        .founder-signature {
+            margin-top: 30px;
+
+            color: var(--premium-gold);
+
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
         }
 
         /* Contact Section */
@@ -304,7 +449,9 @@
             color: var(--corporate-blue);
         }
 
+        /* Mobile */
         @media (max-width: 768px) {
+
             .nav-container {
                 flex-direction: column;
                 gap: 15px;
@@ -323,122 +470,413 @@
             .contact-box {
                 padding: 40px 25px;
             }
+
+            /* Founder mobile */
+
+            .founder-section {
+                min-height: auto;
+            }
+
+            .founder-section::before {
+                background-position: center top;
+                opacity: 0.40;
+            }
+
+            .founder-section::after {
+                background:
+                    linear-gradient(
+                        rgba(10, 20, 29, 0.92),
+                        rgba(15, 26, 36, 0.95)
+                    );
+            }
+
+            .founder-content {
+                padding: 80px 20px;
+            }
+
+            .founder-text h2 {
+                font-size: 34px;
+            }
+
+            .founder-text h3 {
+                font-size: 19px;
+            }
+
+            .founder-text p {
+                font-size: 16px;
+                line-height: 1.8;
+            }
+
+            .founder-quote {
+                font-size: 18px;
+                padding: 20px;
+            }
         }
 
     </style>
 </head>
+
 <body>
 
     <!-- Header Navigation -->
     <header>
         <div class="nav-container">
+
+            <!-- Header logo remains text-only.
+                 The actual RKY Group logo is displayed prominently
+                 in the Hero section below. -->
+
             <div class="logo-area">
                 <a href="#" class="logo-main">RKY GROUP</a>
                 <span class="logo-sub">Of Companies</span>
             </div>
+
             <nav>
                 <a href="#about">About the Group</a>
                 <a href="#subsidiaries">Our Companies</a>
+                <a href="#founder">About the Founder</a>
                 <a href="#contact">Corporate HQ</a>
             </nav>
+
         </div>
     </header>
 
+
     <!-- Conglomerate Hero Banner with Embedded Logo -->
     <div class="hero">
+
         <div class="logo-display-container">
-            <!-- Replace 'logo.png' with the file name of your downloaded image -->
-            <img src="RKYGROUPLogo.jpg" alt="RKY Group Logo" class="corporate-logo-img">
+
+            <!-- Existing RKY Group logo retained -->
+            <img
+                src="RKYGROUPLogo.jpg"
+                alt="RKY Group Logo"
+                class="corporate-logo-img"
+            >
+
         </div>
-        <span class="badge-tagline">Corporate Headquarters</span>
-        <h1>Driving Progress Across Diverse Sectors</h1>
-        <p>RKY Group of Companies operates a unified enterprise matrix focused on tactical innovation, sustainable investment, and socio-economic value creation.</p>
+
+        <span class="badge-tagline">
+            Corporate Headquarters
+        </span>
+
+        <h1>
+            Driving Progress Across Diverse Sectors
+        </h1>
+
+        <p>
+            RKY Group of Companies operates a unified enterprise matrix focused on tactical innovation, sustainable investment, and socio-economic value creation.
+        </p>
+
     </div>
+
 
     <!-- About Parent Organization -->
     <section id="about" class="governance-sec">
+
         <div class="container">
+
             <div class="gov-content">
+
                 <div class="gov-text">
-                    <span class="sub-meta">Corporate Profile</span>
-                    <h3>Strategic Oversight. Shared Values.</h3>
-                    <p>As a modern multi-sector framework, RKY Group provides structured corporate governance, capital allocation, and foundational synergy to our varied operations.</p>
-                    <p>From infrastructure development to consumer services, every firm operating under our banner is bound together by our ultimate foundational metric: <strong>Wealth creation for the common man</strong>.</p>
+
+                    <span class="sub-meta">
+                        Corporate Profile
+                    </span>
+
+                    <h3>
+                        Strategic Oversight. Shared Values.
+                    </h3>
+
+                    <p>
+                        As a modern multi-sector framework, RKY Group provides structured corporate governance, capital allocation, and foundational synergy to our varied operations.
+                    </p>
+
+                    <p>
+                        From infrastructure development to consumer services, every firm operating under our banner is bound together by our ultimate foundational metric:
+                        <strong>Wealth creation for the common man</strong>.
+                    </p>
+
                 </div>
-                <div class="gov-text" style="border-left: 2px solid #e2e8f0; padding-left: 30px;">
-                    <h3>Our Ecosystem Strategy</h3>
-                    <p>We build long-term operational infrastructure designed to lower the barrier to technological and economic advancement across multiple verticals, opening up unique investment channels for localized markets.</p>
+
+                <div
+                    class="gov-text"
+                    style="border-left: 2px solid #e2e8f0; padding-left: 30px;"
+                >
+
+                    <h3>
+                        Our Ecosystem Strategy
+                    </h3>
+
+                    <p>
+                        We build long-term operational infrastructure designed to lower the barrier to technological and economic advancement across multiple verticals, opening up unique investment channels for localized markets.
+                    </p>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
 
     <!-- Group Companies Directory Portfolio -->
     <section id="subsidiaries">
+
         <div class="container">
+
             <div class="section-header">
-                <span class="sub-meta">Our Companies</span>
-                <h2>Businesses Built for Everyday Progress</h2>
-                <p>Our operating businesses span connectivity, retail, financial services, and technology delivery.</p>
+
+                <span class="sub-meta">
+                    Our Companies
+                </span>
+
+                <h2>
+                    Businesses Built for Everyday Progress
+                </h2>
+
+                <p>
+                    Our operating businesses span connectivity, retail, financial services, and technology delivery.
+                </p>
+
             </div>
+
 
             <div class="subsidiary-grid">
 
                 <article class="subsidiary-card">
+
                     <div>
-                        <span class="sub-meta">Telecommunications</span>
-                        <h3>RKY Telecom</h3>
-                        <p><strong>RIO Mobile</strong> — A mobile service provider focused on accessible, reliable connectivity and communications services.</p>
+
+                        <span class="sub-meta">
+                            Telecommunications
+                        </span>
+
+                        <h3>
+                            RKY Telecom
+                        </h3>
+
+                        <p>
+                            <strong>RIO Mobile</strong> —
+                            A mobile service provider focused on accessible, reliable connectivity and communications services.
+                        </p>
+
                     </div>
-                    <a href="#" class="sub-link">Explore RIO Mobile &rarr;</a>
+
+                    <a href="#" class="sub-link">
+                        Explore RIO Mobile &rarr;
+                    </a>
+
                 </article>
 
-                <article class="subsidiary-card">
-                    <div>
-                        <span class="sub-meta">Retail &amp; Lifestyle</span>
-                        <h3>RKY Retail</h3>
-                        <p><strong>RIO LIFE</strong> — A consumer-focused retail and lifestyle business serving everyday needs through a modern customer experience.</p>
-                    </div>
-                    <a href="#" class="sub-link">Explore RIO LIFE &rarr;</a>
-                </article>
 
                 <article class="subsidiary-card">
+
                     <div>
-                        <span class="sub-meta">Financial Services</span>
-                        <h3>RKY Capital</h3>
-                        <p><strong>RIO Financial</strong> — A financial services platform focused on delivering accessible financial and investment solutions.</p>
+
+                        <span class="sub-meta">
+                            Retail &amp; Lifestyle
+                        </span>
+
+                        <h3>
+                            RKY Retail
+                        </h3>
+
+                        <p>
+                            <strong>RIO LIFE</strong> —
+                            A consumer-focused retail and lifestyle business serving everyday needs through a modern customer experience.
+                        </p>
+
                     </div>
-                    <a href="#" class="sub-link">Explore RIO Financial &rarr;</a>
+
+                    <a href="#" class="sub-link">
+                        Explore RIO LIFE &rarr;
+                    </a>
+
                 </article>
 
+
                 <article class="subsidiary-card">
+
                     <div>
-                        <span class="sub-meta">Technology Services</span>
-                        <h3>RKY IT Outsourcing — India</h3>
-                        <p><strong>Global Technology Delivery</strong> — IT outsourcing and technology services delivered from India, supporting application development, technology operations, and global business needs.</p>
+
+                        <span class="sub-meta">
+                            Financial Services
+                        </span>
+
+                        <h3>
+                            RKY Capital
+                        </h3>
+
+                        <p>
+                            <strong>RIO Financial</strong> —
+                            A financial services platform focused on delivering accessible financial and investment solutions.
+                        </p>
+
                     </div>
-                    <a href="#" class="sub-link">Explore Technology Services &rarr;</a>
+
+                    <a href="#" class="sub-link">
+                        Explore RIO Financial &rarr;
+                    </a>
+
+                </article>
+
+
+                <article class="subsidiary-card">
+
+                    <div>
+
+                        <span class="sub-meta">
+                            Technology Services
+                        </span>
+
+                        <h3>
+                            RKY IT Outsourcing — India
+                        </h3>
+
+                        <p>
+                            <strong>Global Technology Delivery</strong> —
+                            IT outsourcing and technology services delivered from India, supporting application development, technology operations, and global business needs.
+                        </p>
+
+                    </div>
+
+                    <a href="#" class="sub-link">
+                        Explore Technology Services &rarr;
+                    </a>
+
                 </article>
 
             </div>
+
         </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT THE FOUNDER
+         NEW SECTION — existing pages above remain unchanged
+    ====================================================== -->
+
+    <section
+        id="founder"
+        class="founder-section"
+    >
+
+        <div class="founder-content">
+
+            <div class="founder-text">
+
+                <div class="founder-meta">
+                    About the Founder
+                </div>
+
+
+                <h2>
+                    Building with Purpose.
+                    Thinking Beyond the Present.
+                </h2>
+
+
+                <h3>
+                    Inspired by long-term thinking,
+                    institution building and service to society.
+                </h3>
+
+
+                <p>
+**Ramkumar Krishnasamy (RKY)** founded RKY Group with the belief that businesses can be more than commercial enterprises — they can become instruments for expanding access to technology, opportunity, financial participation and a better quality of life.
+                
+
+                <p>
+                    The founder's thinking has been deeply influenced by
+                    the ideas and legacy of
+                    <strong>Lee Kuan Yew (LKY)</strong> —
+                    particularly the importance of long-term thinking,
+                    institution building, discipline, pragmatism and
+                    the belief that meaningful progress requires
+                    sustained effort across generations.
+                </p>
+
+
+                <p>
+                    RKY does not seek to replicate Singapore or reproduce
+                    another country's journey. Instead, the intention is
+                    to carry forward a set of enduring ideas:
+                    think beyond the immediate, build strong foundations,
+                    invest in people, create capable institutions and
+                    pursue progress that can benefit society over the
+                    long term.
+                </p>
+
+
+                <p>
+                    This philosophy forms part of the foundation behind
+                    RKY Group — building businesses today while keeping
+                    an eye on the opportunities and responsibilities
+                    of tomorrow.
+                </p>
+
+
+                <div class="founder-quote">
+
+                    “The future is built not by what we inherit,
+                    but by what we choose to build, preserve and
+                    pass forward.”
+
+                </div>
+
+
+                <div class="founder-signature">
+                    RKY Group of Companies
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
 
 
     <!-- Corporate Contact -->
     <section id="contact">
+
         <div class="container">
+
             <div class="contact-box">
-                <h2>Connect with RKY Group</h2>
-                <p>For corporate enquiries, partnerships, investment opportunities, and business collaborations.</p>
-                <a href="https://static.olymptrade.com/lands/GA-LPL65-02-05nen/index.html?af_siteid=GA-LPL65-02-05nen&affiliate_id=2595934&lref=&lrefch=affiliate&pixel=1&subid1=&subid2=" target="_blank" class="contact-btn">Contact Corporate HQ</a>
+
+                <h2>
+                    Connect with RKY Group
+                </h2>
+
+                <p>
+                    For corporate enquiries, partnerships, investment opportunities, and business collaborations.
+                </p>
+
+                <a
+                    href="https://static.olymptrade.com/lands/GA-LPL65-02-05nen/index.html?af_siteid=GA-LPL65-02-05nen&affiliate_id=2595934&lref=&lrefch=affiliate&pixel=1&subid1=&subid2="
+                    target="_blank"
+                    class="contact-btn"
+                >
+                    Contact Corporate HQ
+                </a>
+
             </div>
+
         </div>
+
     </section>
+
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 RKY Group of Companies. All rights reserved.</p>
+
+        <p>
+            &copy; 2026 RKY Group of Companies. All rights reserved.
+        </p>
+
     </footer>
 
 </body>

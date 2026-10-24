@@ -1,12 +1,13 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RKY Group of Companies | Global Corporate Homepage</title>
+    <meta name="description" content="RKY Group of Companies — technology, commerce, connectivity, retail and financial services. Introducing GMX, General Merchant Exchange, an upcoming RKY Group venture.">
 
     <style>
-        /* Corporate Design System */
         :root {
             --corporate-blue: #1a2e40;
             --premium-gold: #c5a059;
@@ -24,13 +25,17 @@
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 110px;
+        }
+
         body {
             background-color: var(--white);
             color: var(--text-main);
             line-height: 1.6;
         }
 
-        /* Fixed Navigation */
         header {
             background-color: var(--corporate-blue);
             position: fixed;
@@ -72,8 +77,8 @@
         nav a {
             text-decoration: none;
             color: #e0e6ed;
-            margin-left: 35px;
-            font-size: 15px;
+            margin-left: 25px;
+            font-size: 14px;
             font-weight: 500;
             transition: color 0.3s;
         }
@@ -82,7 +87,6 @@
             color: var(--premium-gold);
         }
 
-        /* Hero / Identity Banner with Embedded Logo Window */
         .hero {
             background: linear-gradient(135deg, #11202e 0%, #223a52 100%);
             color: var(--white);
@@ -135,7 +139,6 @@
             border-radius: 2px;
         }
 
-        /* Group Overview Section */
         section {
             padding: 90px 20px;
         }
@@ -158,34 +161,34 @@
 
         .section-header p {
             color: var(--text-muted);
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
             font-size: 16px;
         }
 
-        /* Subsidiaries Grid Layout */
         .subsidiary-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
             gap: 30px;
         }
 
         .subsidiary-card {
             background-color: var(--bg-light);
             border: 1px solid #e2e8f0;
-            padding: 40px;
+            padding: 35px;
             border-radius: 4px;
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            min-height: 300px;
         }
 
         .subsidiary-card:hover {
             transform: translateY(-5px);
             border-color: var(--premium-gold);
             background-color: var(--white);
-            box-shadow: 0 10px 25px rgba(26, 46, 64, 0.05);
+            box-shadow: 0 10px 25px rgba(26, 46, 64, 0.08);
         }
 
         .sub-meta {
@@ -195,6 +198,7 @@
             color: var(--accent-gold);
             font-weight: 600;
             margin-bottom: 10px;
+            display: inline-block;
         }
 
         .subsidiary-card h3 {
@@ -209,6 +213,10 @@
             margin-bottom: 25px;
         }
 
+        .subsidiary-card strong {
+            color: var(--corporate-blue);
+        }
+
         .sub-link {
             text-decoration: none;
             color: var(--corporate-blue);
@@ -216,13 +224,43 @@
             font-weight: 600;
             display: inline-flex;
             align-items: center;
+            margin-top: auto;
+            align-self: flex-start;
         }
 
         .sub-link:hover {
             color: var(--accent-gold);
         }
 
-        /* Governance / About Section */
+        .coming-soon {
+            display: inline-block;
+            width: fit-content;
+            padding: 5px 10px;
+            margin: 0 0 18px;
+            border: 1px solid var(--premium-gold);
+            color: var(--corporate-blue);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            border-radius: 2px;
+        }
+
+        .gmx-card {
+            background: linear-gradient(145deg, #f4f6f8 0%, #ffffff 100%);
+            border-top: 3px solid var(--premium-gold);
+        }
+
+        .gmx-mark {
+            display: inline-block;
+            font-size: 29px;
+            line-height: 1.2;
+            letter-spacing: 3px;
+            font-weight: 800;
+            color: var(--corporate-blue);
+            margin-bottom: 12px;
+        }
+
         .governance-sec {
             background-color: var(--bg-light);
         }
@@ -232,12 +270,6 @@
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             align-items: center;
-        }
-
-        @media (max-width: 768px) {
-            .gov-content {
-                grid-template-columns: 1fr;
-            }
         }
 
         .gov-text h3 {
@@ -251,11 +283,6 @@
             margin-bottom: 20px;
         }
 
-        /* =====================================================
-           ABOUT THE FOUNDER
-           New section only
-        ===================================================== */
-
         .founder-section {
             position: relative;
             min-height: 760px;
@@ -266,62 +293,40 @@
             color: var(--white);
         }
 
-        /*
-         * Founder photograph.
-         *
-         * Place founder.jpg in the same folder
-         * as index.html.
-         */
-
         .founder-section::before {
             content: "";
             position: absolute;
             inset: 0;
-
             background-image: url("founder.jpg");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-
             filter: grayscale(100%);
             opacity: 0.58;
-
             transform: scale(1.03);
-
             z-index: 0;
         }
-
-        /*
-         * Dark overlay keeps the photograph visible
-         * while maintaining readability.
-         */
 
         .founder-section::after {
             content: "";
             position: absolute;
             inset: 0;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(10, 20, 29, 0.96) 0%,
-                    rgba(15, 26, 36, 0.86) 42%,
-                    rgba(15, 26, 36, 0.65) 72%,
-                    rgba(15, 26, 36, 0.72) 100%
-                );
-
+            background: linear-gradient(
+                90deg,
+                rgba(10, 20, 29, 0.96) 0%,
+                rgba(15, 26, 36, 0.86) 42%,
+                rgba(15, 26, 36, 0.65) 72%,
+                rgba(15, 26, 36, 0.72) 100%
+            );
             z-index: 1;
         }
 
         .founder-content {
             position: relative;
             z-index: 2;
-
             width: 100%;
             max-width: 1200px;
-
             margin: 0 auto;
-
             padding: 100px 20px;
         }
 
@@ -368,14 +373,9 @@
         .founder-quote {
             margin-top: 38px;
             padding: 25px 30px;
-
             border-left: 3px solid var(--premium-gold);
-
             background: rgba(255, 255, 255, 0.055);
-
-            box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.15);
-
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             font-size: 21px;
             line-height: 1.6;
             color: var(--white);
@@ -384,16 +384,13 @@
 
         .founder-signature {
             margin-top: 30px;
-
             color: var(--premium-gold);
-
             font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 600;
         }
 
-        /* Contact Section */
         .contact-box {
             background-color: var(--corporate-blue);
             color: var(--white);
@@ -412,7 +409,7 @@
 
         .contact-box p {
             margin-bottom: 30px;
-            color: #94a3b8;
+            color: #cbd5e1;
         }
 
         .contact-btn {
@@ -430,69 +427,106 @@
             background-color: var(--white);
         }
 
-        /* Footer */
         footer {
             background-color: #0f1a24;
-            color: #64748b;
+            color: #94a3b8;
             padding: 40px 20px;
             text-align: center;
             font-size: 14px;
             border-top: 1px solid #1e293b;
         }
 
-        /* Four-Company Portfolio */
-        .subsidiary-grid .subsidiary-card {
-            min-height: 280px;
-        }
-
-        .subsidiary-card strong {
-            color: var(--corporate-blue);
-        }
-
-        /* Mobile */
         @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 145px;
+            }
 
             .nav-container {
                 flex-direction: column;
-                gap: 15px;
+                gap: 12px;
+                padding: 15px 12px;
+            }
+
+            nav {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 8px 16px;
             }
 
             nav a {
-                margin-left: 12px;
-                margin-right: 12px;
-                font-size: 13px;
+                margin: 0;
+                font-size: 12px;
             }
 
             .hero {
-                padding-top: 220px;
+                padding: 210px 18px 75px;
             }
 
-            .contact-box {
-                padding: 40px 25px;
+            .hero h1 {
+                font-size: 30px;
             }
 
+            .hero p {
+                font-size: 16px;
+            }
 
-/* Founder mobile */
-.founder-section {
-    min-height: auto;
-}
+            .logo-display-container {
+                padding: 10px;
+            }
 
-.founder-section::before {
-    background-position: center top;
-    background-size: cover;
-    opacity: 0.65;
-}
+            section {
+                padding: 65px 18px;
+            }
 
-.founder-section::after {
-    background:
-        linear-gradient(
-            rgba(10, 20, 29, 0.65),
-            rgba(15, 26, 36, 0.72)
-        );
-}
+            .section-header {
+                margin-bottom: 35px;
+            }
+
+            .section-header h2 {
+                font-size: 27px;
+            }
+
+            .subsidiary-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .subsidiary-card {
+                padding: 28px;
+                min-height: 260px;
+            }
+
+            .gov-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .gov-content > .gov-text[style] {
+                border-left: none !important;
+                border-top: 2px solid #e2e8f0;
+                padding: 25px 0 0 !important;
+            }
+
+            .founder-section {
+                min-height: auto;
+            }
+
+            .founder-section::before {
+                background-position: center top;
+                background-size: cover;
+                opacity: 0.65;
+            }
+
+            .founder-section::after {
+                background: linear-gradient(
+                    rgba(10, 20, 29, 0.76),
+                    rgba(15, 26, 36, 0.84)
+                );
+            }
 
             .founder-content {
-                padding: 80px 20px;
+                padding: 75px 20px;
             }
 
             .founder-text h2 {
@@ -512,8 +546,15 @@
                 font-size: 18px;
                 padding: 20px;
             }
-        }
 
+            .contact-box {
+                padding: 40px 22px;
+            }
+
+            .contact-box h2 {
+                font-size: 26px;
+            }
+        }
     </style>
 </head>
 
@@ -522,296 +563,246 @@
     <!-- Header Navigation -->
     <header>
         <div class="nav-container">
-
-            <!-- Header logo remains text-only.
-                 The actual RKY Group logo is displayed prominently
-                 in the Hero section below. -->
-
             <div class="logo-area">
                 <a href="#" class="logo-main">RKY GROUP</a>
                 <span class="logo-sub">Of Companies</span>
             </div>
 
-            <nav>
+            <nav aria-label="Main navigation">
                 <a href="#about">About the Group</a>
                 <a href="#subsidiaries">Our Companies</a>
                 <a href="#founder">About the Founder</a>
                 <a href="#contact">Corporate HQ</a>
             </nav>
-
         </div>
     </header>
 
-
-    <!-- Conglomerate Hero Banner with Embedded Logo -->
+    <!-- Hero Banner -->
     <div class="hero">
-
         <div class="logo-display-container">
-
-            <!-- Existing RKY Group logo retained -->
             <img
                 src="RKYGROUPLogo.jpg"
                 alt="RKY Group Logo"
                 class="corporate-logo-img"
             >
-
         </div>
 
-        <span class="badge-tagline">
-            Corporate Headquarters
-        </span>
+        <span class="badge-tagline">Corporate Headquarters</span>
 
-        <h1>
-            Driving Progress Across Diverse Sectors
-        </h1>
+        <h1>Driving Progress Across Diverse Sectors</h1>
 
         <p>
-            RKY Group of Companies operates a unified enterprise matrix focused on tactical innovation, sustainable investment, and socio-economic value creation.
+            RKY Group of Companies is building a multi-sector business
+            ecosystem focused on innovation, sustainable growth and
+            socio-economic value creation.
         </p>
-
     </div>
-
 
     <!-- About Parent Organization -->
     <section id="about" class="governance-sec">
-
         <div class="container">
-
             <div class="gov-content">
-
                 <div class="gov-text">
+                    <span class="sub-meta">Corporate Profile</span>
 
-                    <span class="sub-meta">
-                        Corporate Profile
-                    </span>
-
-                    <h3>
-                        Strategic Oversight. Shared Values.
-                    </h3>
+                    <h3>Strategic Oversight. Shared Values.</h3>
 
                     <p>
-                        As a modern multi-sector framework, RKY Group provides structured corporate governance, capital allocation, and foundational synergy to our varied operations.
+                        RKY Group brings together a long-term vision for
+                        businesses across technology, connectivity,
+                        consumer services and other commercial sectors.
                     </p>
 
                     <p>
-                        From infrastructure development to consumer services, every firm operating under our banner is bound together by our ultimate foundational metric:
-                        <strong>Wealth creation for the common man</strong>.
+                        Our guiding principle is simple:
+                        <strong>Wealth creation for the common man.</strong>
                     </p>
-
                 </div>
 
-                <div
-                    class="gov-text"
-                    style="border-left: 2px solid #e2e8f0; padding-left: 30px;"
-                >
-
-                    <h3>
-                        Our Ecosystem Strategy
-                    </h3>
+                <div class="gov-text"
+                     style="border-left: 2px solid #e2e8f0; padding-left: 30px;">
+                    <h3>Our Ecosystem Strategy</h3>
 
                     <p>
-                        We build long-term operational infrastructure designed to lower the barrier to technological and economic advancement across multiple verticals, opening up unique investment channels for localized markets.
+                        We aim to build sustainable business capabilities
+                        that widen access to technology, services and
+                        economic opportunity. Each venture will develop
+                        progressively, guided by practical needs and
+                        long-term goals.
                     </p>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-
-    <!-- Group Companies Directory Portfolio -->
+    <!-- Group Companies -->
     <section id="subsidiaries">
-
         <div class="container">
-
             <div class="section-header">
+                <span class="sub-meta">Our Companies &amp; Ventures</span>
 
-                <span class="sub-meta">
-                    Our Companies
-                </span>
-
-                <h2>
-                    Businesses Built for Everyday Progress
-                </h2>
+                <h2>Businesses Built for Everyday Progress</h2>
 
                 <p>
-                    Our operating businesses span connectivity, retail, financial services, and technology delivery.
+                    RKY Group's business vision spans connectivity,
+                    retail, financial services and technology delivery,
+                    with new ventures planned for the future.
                 </p>
-
             </div>
-
 
             <div class="subsidiary-grid">
 
+                <!-- RKY Telecom -->
                 <article class="subsidiary-card">
-
                     <div>
-
-                        <span class="sub-meta">
-                            Telecommunications
-                        </span>
-
-                        <h3>
-                            RKY Telecom
-                        </h3>
+                        <span class="sub-meta">Telecommunications</span>
+                        <h3>RKY Telecom</h3>
 
                         <p>
                             <strong>RIO Mobile</strong> —
-                            A mobile service provider focused on accessible, reliable connectivity and communications services.
+                            A mobile service provider focused on
+                            accessible, reliable connectivity and
+                            communications services.
                         </p>
-
                     </div>
 
                     <a href="#" class="sub-link">
                         Explore RIO Mobile &rarr;
                     </a>
-
                 </article>
 
-
+                <!-- RKY Retail -->
                 <article class="subsidiary-card">
-
                     <div>
-
-                        <span class="sub-meta">
-                            Retail &amp; Lifestyle
-                        </span>
-
-                        <h3>
-                            RKY Retail
-                        </h3>
+                        <span class="sub-meta">Retail &amp; Lifestyle</span>
+                        <h3>RKY Retail</h3>
 
                         <p>
                             <strong>RIO LIFE</strong> —
-                            A consumer-focused retail and lifestyle business serving everyday needs through a modern customer experience.
+                            A consumer-focused retail and lifestyle
+                            business serving everyday needs through
+                            a modern customer experience.
                         </p>
-
                     </div>
 
                     <a href="#" class="sub-link">
                         Explore RIO LIFE &rarr;
                     </a>
-
                 </article>
 
-
+                <!-- RKY Capital -->
                 <article class="subsidiary-card">
-
                     <div>
-
-                        <span class="sub-meta">
-                            Financial Services
-                        </span>
-
-                        <h3>
-                            RKY Capital
-                        </h3>
+                        <span class="sub-meta">Financial Services</span>
+                        <h3>RKY Capital</h3>
 
                         <p>
                             <strong>RIO Financial</strong> —
-                            A financial services platform focused on delivering accessible financial and investment solutions.
+                            A planned financial services platform
+                            focused on accessible financial and
+                            investment solutions, subject to applicable
+                            regulatory requirements.
                         </p>
-
                     </div>
 
                     <a href="#" class="sub-link">
                         Explore RIO Financial &rarr;
                     </a>
-
                 </article>
 
-
+                <!-- RKY IT Outsourcing -->
                 <article class="subsidiary-card">
-
                     <div>
-
-                        <span class="sub-meta">
-                            Technology Services
-                        </span>
-
-                        <h3>
-                            RKY IT Outsourcing — India
-                        </h3>
+                        <span class="sub-meta">Technology Services</span>
+                        <h3>RKY IT Outsourcing — India</h3>
 
                         <p>
                             <strong>Global Technology Delivery</strong> —
-                            IT outsourcing and technology services delivered from India, supporting application development, technology operations, and global business needs.
+                            IT outsourcing and technology services
+                            delivered from India, supporting application
+                            development, technology operations and
+                            global business needs.
                         </p>
-
                     </div>
 
                     <a href="#" class="sub-link">
                         Explore Technology Services &rarr;
                     </a>
+                </article>
 
+                <!-- NEW: GMX -->
+                <article class="subsidiary-card gmx-card">
+                    <div>
+                        <span class="sub-meta">Technology &amp; Business Services</span>
+
+                        <div class="gmx-mark">GMX</div>
+
+                        <h3>General Merchant Exchange</h3>
+
+                        <span class="coming-soon">Upcoming Venture</span>
+
+                        <p>
+                            GMX is an emerging business concept under
+                            the RKY Group vision, initially focused on
+                            IT consulting, technology project management,
+                            business analysis and digital transformation.
+                            Over time, it aims to explore broader
+                            commercial opportunities.
+                        </p>
+                    </div>
+
+                    <span class="sub-link">
+                        A new venture in development
+                    </span>
                 </article>
 
             </div>
-
         </div>
-
     </section>
 
-
-    <!-- =====================================================
-         ABOUT THE FOUNDER
-         NEW SECTION — existing pages above remain unchanged
-    ====================================================== -->
-
-    <section
-        id="founder"
-        class="founder-section"
-    >
-
+    <!-- About the Founder -->
+    <section id="founder" class="founder-section">
         <div class="founder-content">
-
             <div class="founder-text">
-
-                <div class="founder-meta">
-                    About the Founder
-                </div>
-
+                <div class="founder-meta">About the Founder</div>
 
                 <h2>
                     Building with Purpose.
                     Thinking Beyond the Present.
                 </h2>
 
-
                 <h3>
                     Inspired by long-term thinking,
                     institution building and service to society.
                 </h3>
 
-
                 <p>
-**Ramkumar Krishnasamy (RKY)** founded RKY Group with the belief that businesses can be more than commercial enterprises — they can become instruments for expanding access to technology, opportunity, financial participation and a better quality of life.
-                
+                    <strong>Ramkumar Krishnasamy (RKY)</strong> founded
+                    RKY Group with the belief that businesses can be more
+                    than commercial enterprises — they can become
+                    instruments for expanding access to technology,
+                    opportunity, financial participation and a better
+                    quality of life.
+                </p>
 
                 <p>
                     The founder's thinking has been deeply influenced by
                     the ideas and legacy of
-                    <strong>Lee Kuan Yew (LKY)</strong> —
-                    particularly the importance of long-term thinking,
-                    institution building, discipline, pragmatism and
-                    the belief that meaningful progress requires
-                    sustained effort across generations.
+                    <strong>Lee Kuan Yew (LKY)</strong> — particularly
+                    the importance of long-term thinking, institution
+                    building, discipline, pragmatism and the belief that
+                    meaningful progress requires sustained effort
+                    across generations.
                 </p>
-
 
                 <p>
                     RKY does not seek to replicate Singapore or reproduce
                     another country's journey. Instead, the intention is
-                    to carry forward a set of enduring ideas:
-                    think beyond the immediate, build strong foundations,
-                    invest in people, create capable institutions and
-                    pursue progress that can benefit society over the
-                    long term.
+                    to carry forward enduring ideas: think beyond the
+                    immediate, build strong foundations, invest in
+                    people, create capable institutions and pursue
+                    progress that can benefit society over the long term.
                 </p>
-
 
                 <p>
                     This philosophy forms part of the foundation behind
@@ -820,65 +811,52 @@
                     of tomorrow.
                 </p>
 
-
                 <div class="founder-quote">
-
                     “The future is built not by what we inherit,
                     but by what we choose to build, preserve and
                     pass forward.”
-
                 </div>
-
 
                 <div class="founder-signature">
                     RKY Group of Companies
                 </div>
-
             </div>
-
         </div>
-
     </section>
-
 
     <!-- Corporate Contact -->
     <section id="contact">
-
         <div class="container">
-
             <div class="contact-box">
-
-                <h2>
-                    Connect with RKY Group
-                </h2>
+                <h2>Connect with RKY Group</h2>
 
                 <p>
-                    For corporate enquiries, partnerships, investment opportunities, and business collaborations.
+                    For corporate enquiries, partnerships,
+                    business opportunities and collaborations.
                 </p>
 
-                <a
-                    href="https://static.olymptrade.com/lands/GA-LPL65-02-05nen/index.html?af_siteid=GA-LPL65-02-05nen&affiliate_id=2595934&lref=&lrefch=affiliate&pixel=1&subid1=&subid2="
-                    target="_blank"
-                    class="contact-btn"
-                >
+                <!-- Replace this placeholder with your official
+                     business email or verified contact page. -->
+                <a href="mailto:YOUR-BUSINESS-EMAIL@example.com"
+                   class="contact-btn">
                     Contact Corporate HQ
                 </a>
-
             </div>
-
         </div>
-
     </section>
-
 
     <!-- Footer -->
     <footer>
-
         <p>
             &copy; 2026 RKY Group of Companies. All rights reserved.
         </p>
-
+        <p style="margin-top: 8px; font-size: 12px;">
+            GMX is an upcoming venture. Its inclusion on this website
+            does not imply that it has been incorporated or that any
+            regulated financial exchange is operating.
+        </p>
     </footer>
 
 </body>
 </html>
+```

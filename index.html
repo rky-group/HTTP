@@ -5,15 +5,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>RKY Group | General Merchant Inc. | Global Business & Technology</title>
-
+<title>RKY Group | General Merchant Inc. | Global Business &amp; Technology</title>
 <meta name="description" content="RKY Group brings together technology, consulting, retail, financial services and global business opportunities. Discover General Merchant Inc. (GMX).">
 
 <style>
-/* =========================================================
-   RKY GROUP — CORPORATE DESIGN SYSTEM
-   ========================================================= */
-
 :root {
     --navy: #102538;
     --navy-dark: #091725;
@@ -162,9 +157,7 @@ img {
     transform: translateY(-2px);
 }
 
-/* =========================================================
-   HEADER & NAVIGATION
-   ========================================================= */
+/* HEADER & NAVIGATION */
 
 header {
     background: rgba(9, 23, 37, 0.97);
@@ -211,6 +204,7 @@ header {
 }
 
 .brand-name {
+    display: block;
     font-weight: 800;
     font-size: 1.12rem;
     letter-spacing: 1.3px;
@@ -260,9 +254,7 @@ header {
     cursor: pointer;
 }
 
-/* =========================================================
-   HERO
-   ========================================================= */
+/* HERO */
 
 .hero {
     min-height: 640px;
@@ -276,24 +268,24 @@ header {
         linear-gradient(120deg, #091725 0%, #102538 55%, #1b3850 100%);
 }
 
-.hero::before {
+.hero::before,
+.hero::after {
     content: "";
     position: absolute;
+    border: 1px solid rgba(197,160,89,0.17);
+    border-radius: 50%;
+}
+
+.hero::before {
     width: 520px;
     height: 520px;
-    border: 1px solid rgba(197,160,89,0.16);
-    border-radius: 50%;
     right: -100px;
     top: 35px;
 }
 
 .hero::after {
-    content: "";
-    position: absolute;
     width: 390px;
     height: 390px;
-    border: 1px solid rgba(197,160,89,0.18);
-    border-radius: 50%;
     right: -35px;
     top: 100px;
 }
@@ -359,9 +351,7 @@ header {
     margin-bottom: 3px;
 }
 
-/* =========================================================
-   GROUP INTRODUCTION
-   ========================================================= */
+/* GROUP INTRODUCTION */
 
 .intro-grid {
     display: grid;
@@ -464,9 +454,7 @@ header {
     color: var(--muted);
 }
 
-/* =========================================================
-   COMPANY PORTFOLIO
-   ========================================================= */
+/* COMPANY PORTFOLIO */
 
 .company-grid {
     display: grid;
@@ -521,9 +509,7 @@ header {
     font-size: 0.91rem;
 }
 
-/* =========================================================
-   GENERAL MERCHANT INC. / GMX
-   ========================================================= */
+/* GMX — GENERAL MERCHANT INC. */
 
 .gmx-section {
     background:
@@ -618,19 +604,23 @@ header {
     font-size: 0.94rem;
 }
 
+/* SIX GMX DIVISIONS WITH ORIGINAL VISUALS */
+
 .gmx-services {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
     margin-top: 36px;
+    align-items: stretch;
 }
 
 .gmx-card {
+    padding: 0;
+    min-width: 0;
+    overflow: hidden;
     background: rgba(255,255,255,0.055);
     border: 1px solid rgba(255,255,255,0.13);
     border-radius: 7px;
-    padding: 29px 25px;
-    min-height: 235px;
     transition: 0.3s ease;
 }
 
@@ -640,16 +630,28 @@ header {
     transform: translateY(-5px);
 }
 
-.gmx-card-icon {
-    width: 54px;
-    height: 54px;
-    display: grid;
-    place-items: center;
-    border-radius: 6px;
-    background: rgba(197,160,89,0.14);
-    color: var(--gold-light);
-    font-size: 1.7rem;
-    margin-bottom: 20px;
+.gmx-card-visual {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    background: #f1f1f1;
+}
+
+.gmx-card-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.gmx-card:hover .gmx-card-visual img {
+    transform: scale(1.04);
+}
+
+.gmx-card-content {
+    padding: 25px;
 }
 
 .gmx-card h3 {
@@ -672,40 +674,7 @@ header {
     margin-bottom: 8px;
 }
 
-.gmx-model-title {
-    text-align: center;
-    color: var(--gold-light);
-    font-size: 1.55rem;
-    margin: 60px 0 24px;
-}
-
-.model-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 16px;
-}
-
-.model-step {
-    padding: 24px 18px;
-    text-align: center;
-    border-top: 2px solid var(--gold);
-    background: rgba(255,255,255,0.045);
-}
-
-.model-step .step-icon {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-.model-step h4 {
-    color: var(--gold-light);
-    margin-bottom: 7px;
-}
-
-.model-step p {
-    color: #c7d2dc;
-    font-size: 0.86rem;
-}
+/* GMX REVENUE MODEL */
 
 .gmx-pricing {
     margin-top: 60px;
@@ -764,9 +733,28 @@ header {
     margin-top: 25px;
 }
 
-/* =========================================================
-   VISION & VALUES
-   ========================================================= */
+.gmx-positioning {
+    margin-top: 55px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(197,160,89,0.4);
+    background: rgba(255,255,255,0.035);
+    border-radius: 7px;
+}
+
+.gmx-positioning h3 {
+    color: #fff;
+    font-size: clamp(1.5rem,3vw,2.1rem);
+    margin-bottom: 15px;
+}
+
+.gmx-positioning p {
+    max-width: 780px;
+    margin: 0 auto 22px;
+    color: #c7d2dc;
+}
+
+/* VISION & VALUES */
 
 .values-grid {
     display: grid;
@@ -798,9 +786,7 @@ header {
     font-size: 0.9rem;
 }
 
-/* =========================================================
-   FOUNDER
-   ========================================================= */
+/* FOUNDER */
 
 .founder-grid {
     display: grid;
@@ -872,9 +858,7 @@ header {
     font-weight: 800;
 }
 
-/* =========================================================
-   CONTACT
-   ========================================================= */
+/* CONTACT */
 
 .contact-section {
     background:
@@ -982,9 +966,7 @@ header {
     margin-top: 12px;
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/* FOOTER */
 
 footer {
     background: #07121d;
@@ -1038,9 +1020,7 @@ footer {
     color: var(--gold-light);
 }
 
-/* =========================================================
-   RESPONSIVE DESIGN
-   ========================================================= */
+/* RESPONSIVE DESIGN */
 
 @media (max-width: 1000px) {
     .nav-links {
@@ -1051,17 +1031,13 @@ footer {
         font-size: 0.8rem;
     }
 
-    .company-grid {
+    .company-grid,
+    .pricing-grid,
+    .values-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .gmx-services {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .pricing-grid,
-    .model-grid,
-    .values-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
@@ -1194,15 +1170,21 @@ footer {
     .company-grid,
     .gmx-services,
     .pricing-grid,
-    .model-grid,
     .values-grid,
     .intro-stat {
         grid-template-columns: 1fr;
     }
 
-    .company-card,
-    .gmx-card {
+    .gmx-card-visual {
+        height: 210px;
+    }
+
+    .company-card {
         padding: 24px;
+    }
+
+    .gmx-card-content {
+        padding: 22px;
     }
 
     .contact-panel {
@@ -1233,15 +1215,17 @@ footer {
     *::after {
         transition-duration: 0.01ms !important;
     }
+
+    .gmx-card-visual img {
+        transition: none;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- =======================================================
-     HEADER
-     ======================================================= -->
+<!-- HEADER -->
 
 <header>
     <div class="container navbar">
@@ -1285,9 +1269,7 @@ footer {
 
 <main>
 
-<!-- =======================================================
-     HERO
-     ======================================================= -->
+<!-- HERO -->
 
 <section class="hero" id="home">
     <div class="container">
@@ -1313,7 +1295,6 @@ footer {
                 <a href="#companies" class="btn btn-gold">
                     Explore Our Businesses <span>→</span>
                 </a>
-
                 <a href="#gmx" class="btn btn-outline">
                     Discover GMX
                 </a>
@@ -1324,12 +1305,10 @@ footer {
                     <strong>Technology</strong>
                     Digital capabilities
                 </div>
-
                 <div>
                     <strong>Commerce</strong>
                     Business connections
                 </div>
-
                 <div>
                     <strong>Opportunity</strong>
                     Sustainable growth
@@ -1340,9 +1319,7 @@ footer {
     </div>
 </section>
 
-<!-- =======================================================
-     ABOUT RKY GROUP
-     ======================================================= -->
+<!-- ABOUT RKY GROUP -->
 
 <section class="section" id="about">
     <div class="container intro-grid">
@@ -1350,10 +1327,7 @@ footer {
         <div class="intro-copy">
             <span class="eyebrow">About RKY Group</span>
 
-            <h2>
-                A diversified vision for a connected business world.
-            </h2>
-
+            <h2>A diversified vision for a connected business world.</h2>
             <div class="gold-line" style="margin-left:0;"></div>
 
             <p>
@@ -1380,17 +1354,14 @@ footer {
                     <strong>Entrepreneurial</strong>
                     <span>Built around practical opportunities</span>
                 </div>
-
                 <div class="stat-box">
                     <strong>Collaborative</strong>
                     <span>Powered by expertise and partnerships</span>
                 </div>
-
                 <div class="stat-box">
                     <strong>Technology-led</strong>
                     <span>Focused on useful digital capabilities</span>
                 </div>
-
                 <div class="stat-box">
                     <strong>Growth-oriented</strong>
                     <span>Designed for sustainable development</span>
@@ -1408,9 +1379,7 @@ footer {
     </div>
 </section>
 
-<!-- =======================================================
-     OUR COMPANIES
-     ======================================================= -->
+<!-- OUR COMPANIES -->
 
 <section class="section section-light" id="companies">
     <div class="container">
@@ -1476,9 +1445,7 @@ footer {
     </div>
 </section>
 
-<!-- =======================================================
-     GENERAL MERCHANT INC. — GMX
-     ======================================================= -->
+<!-- GENERAL MERCHANT INC. — GMX -->
 
 <section class="section gmx-section" id="gmx">
     <div class="container">
@@ -1487,17 +1454,13 @@ footer {
 
             <div class="gmx-brand">
                 <div class="gmx-emblem">GMX</div>
-
                 <div class="gmx-brand-text" style="text-align:left;">
                     <strong>GENERAL MERCHANT INC.</strong>
-                    <span>UNDER RKY GROUP</span>
+                    <span>A RKY GROUP COMPANY</span>
                 </div>
             </div>
 
-            <h2>
-                A Modern General Merchant for the Digital Economy
-            </h2>
-
+            <h2>A Modern Commercial House for the Digital Economy</h2>
             <div class="gold-line"></div>
 
             <p class="gmx-tagline">
@@ -1508,20 +1471,17 @@ footer {
         <div class="gmx-lead">
             <p>
                 Inspired by the historic general merchant concept,
-                GMX is envisioned as a modern business partner that
-                brings together expertise, services, suppliers,
-                digital capabilities and commercial opportunities
-                under one flexible business model.
+                GMX brings together buyers, suppliers, expertise,
+                products, services and commercial opportunities
+                through one trusted business network.
             </p>
 
             <p>
-                GMX will initially operate as a consulting-first
-                technology business serving small and medium-sized
-                businesses worldwide. It will use a lean operating
-                model, specialist contractors and trusted partners,
-                with the potential to expand into digital products,
-                managed services, sourcing and broader commercial
-                connections over time.
+                Our modern interpretation connects consulting,
+                technology, managed services, sourcing, commerce,
+                digital products and international business
+                relationships within a broad commercial house
+                for the digital economy.
             </p>
 
             <a href="#contact" class="btn btn-gold">
@@ -1529,7 +1489,7 @@ footer {
             </a>
         </div>
 
-        <!-- GMX BUSINESS CONCEPT -->
+        <!-- THE GMX CONCEPT -->
 
         <div class="gmx-concept">
 
@@ -1540,162 +1500,173 @@ footer {
                     with a broad range of goods, suppliers and services.
                     GMX adapts that coordinating role to the modern
                     business environment: one trusted relationship
-                    helping clients find expertise, solve problems and
-                    access relevant opportunities.
+                    helping clients access expertise, products,
+                    services and commercial opportunities.
                 </p>
             </article>
 
             <article class="concept-card">
-                <h3>The Modern GMX Approach</h3>
+                <h3>A Connected Commercial House</h3>
                 <p>
-                    Start with consulting and technology delivery.
-                    Build recurring managed services. Develop reusable
-                    digital products where customer demand is proven.
-                    Expand into sourcing and commercial partnerships
-                    selectively, without carrying unnecessary inventory
-                    or building a costly fixed organisation at the outset.
+                    GMX represents a unified commercial network in which
+                    consulting expertise, technology capabilities,
+                    service providers, suppliers and buyers can connect.
+                    Its value lies in bringing diverse business needs
+                    and capabilities together through one relationship-driven
+                    commercial model.
                 </p>
             </article>
 
         </div>
 
-        <!-- SIX GMX SERVICE CARDS -->
+        <!-- SIX GMX BUSINESS DIVISIONS -->
 
         <div class="section-heading" style="margin-top:65px;">
             <span class="eyebrow">The GMX Ecosystem</span>
             <h2>One Business. Multiple Opportunities.</h2>
             <div class="gold-line"></div>
             <p>
-                Six connected business pillars, developed progressively
-                according to customer demand and commercial viability.
+                Six connected business divisions under one modern
+                general merchant concept.
             </p>
         </div>
 
         <div class="gmx-services">
 
-            <article class="gmx-card">
-                <div class="gmx-card-icon" aria-hidden="true">◈</div>
-                <span class="card-number">01 / ADVISORY</span>
-                <h3>Consulting &amp; Advisory</h3>
-                <p>
-                    Business and technology assessments, IT strategy,
-                    process improvement, project management, business
-                    analysis, digital transformation and implementation
-                    support for growing organisations.
-                </p>
-            </article>
+            <!-- 01 CONSULTING & ADVISORY -->
 
             <article class="gmx-card">
-                <div class="gmx-card-icon" aria-hidden="true">⇄</div>
-                <span class="card-number">02 / SOURCING</span>
-                <h3>Trade &amp; Sourcing</h3>
-                <p>
-                    Help businesses identify suppliers, evaluate service
-                    providers, coordinate sourcing requests and connect
-                    with suitable partners. Begin through referral,
-                    brokerage or fee-based coordination arrangements.
-                </p>
+                <div class="gmx-card-visual">
+                    <img
+                        src="https://images.openai.com/static-rsc-4/OIGHefiZTTWuwmwS7STpqxb1OpETE4jvVnaX6L3fk8-WiOardD-5kxuR-3PvhXZ9DpDU4YVKCnFU9wb0i7UYS0qvFNxaxP5r4EH4WNy7YQyPDODEIMY4tIctemyseLizLH_IASt0yA3au0qA6VQb-LkAt6N0MT0TrZ_A0aV-yVw?purpose=inline"
+                        alt="Business consulting and advisory"
+                        loading="lazy"
+                    >
+                </div>
+                <div class="gmx-card-content">
+                    <span class="card-number">01 / ADVISORY</span>
+                    <h3>Consulting &amp; Advisory</h3>
+                    <p>
+                        IT consulting, digital transformation, business
+                        process improvement, project management, technology
+                        implementation and operational advisory for small
+                        and medium-sized businesses.
+                    </p>
+                </div>
             </article>
 
-            <article class="gmx-card">
-                <div class="gmx-card-icon" aria-hidden="true">⚙</div>
-                <span class="card-number">03 / DELIVERY</span>
-                <h3>Managed Services</h3>
-                <p>
-                    Ongoing application support, IT coordination,
-                    vendor management, reporting assistance, workflow
-                    automation and technology administration through
-                    clearly scoped recurring service agreements.
-                </p>
-            </article>
+            <!-- 02 TRADE & SOURCING -->
 
             <article class="gmx-card">
-                <div class="gmx-card-icon" aria-hidden="true">▦</div>
-                <span class="card-number">04 / COMMERCE</span>
-                <h3>Commerce &amp; Distribution</h3>
-                <p>
-                    Develop commercial relationships connecting buyers,
-                    suppliers and distributors. Explore selected
-                    products and markets only after validating demand,
-                    margins, logistics and compliance requirements.
-                </p>
+                <div class="gmx-card-visual">
+                    <img
+                        src="https://images.openai.com/static-rsc-4/liY1dB1dInguRxHHnt5l69R25C5NXC5oJkPwgfw4XBbvs1inwiYeo-zIJsc9pcG9iqYHm4CrAwYmP3Q-UzH_QFqw1jSLTOPJKCwOwwQ5LPHibnlhMzqujLjgOnndoDd2LoT1G0YICEVFL4mpcUD5hii1JJW1lC4ljEqYRVkZ9d8?purpose=inline"
+                        alt="Trade and product sourcing"
+                        loading="lazy"
+                    >
+                </div>
+                <div class="gmx-card-content">
+                    <span class="card-number">02 / SOURCING</span>
+                    <h3>Trade &amp; Sourcing</h3>
+                    <p>
+                        Identify suppliers, source products and services,
+                        compare quotations, coordinate procurement and
+                        connect buyers with suitable vendors.
+                    </p>
+                </div>
             </article>
 
-            <article class="gmx-card">
-                <div class="gmx-card-icon" aria-hidden="true">⌘</div>
-                <span class="card-number">05 / DIGITAL</span>
-                <h3>Digital Products &amp; Platforms</h3>
-                <p>
-                    Create reusable business templates, automation
-                    tools, dashboards, workflow solutions, software
-                    utilities and subscription-based digital products
-                    based on recurring customer problems.
-                </p>
-            </article>
+            <!-- 03 MANAGED SERVICES -->
 
             <article class="gmx-card">
-                <div class="gmx-card-icon" aria-hidden="true">◎</div>
-                <span class="card-number">06 / NETWORK</span>
-                <h3>Global Business Connections</h3>
-                <p>
-                    Build a network of consultants, technology
-                    specialists, service providers and commercial
-                    partners to connect customer requirements with
-                    appropriate capabilities across markets.
-                </p>
+                <div class="gmx-card-visual">
+                    <img
+                        src="https://images.openai.com/static-rsc-4/X1ItFklGg4H0OaE27PC4ZdFPxryZWrOGxdp4s0iPIFImZcoLPDVk05VtDvpM37Chxkz5NQIGJOQFVP8gf4kxyavAwft8ztgM_IFYongzgd8RBPHYM_dVfu-bsWMPNIx3vFm-Nl3RkqUm3ex333LP3vo6z3AV1svHGB5lRriVJGM?purpose=inline"
+                        alt="Managed IT services and technology support"
+                        loading="lazy"
+                    >
+                </div>
+                <div class="gmx-card-content">
+                    <span class="card-number">03 / DELIVERY</span>
+                    <h3>Managed Services</h3>
+                    <p>
+                        Ongoing IT support, website maintenance, cloud
+                        administration, application support, reporting,
+                        automation and outsourced business operations
+                        delivered through qualified service providers.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 04 COMMERCE & DISTRIBUTION -->
+
+            <article class="gmx-card">
+                <div class="gmx-card-visual">
+                    <img
+                        src="https://images.openai.com/static-rsc-4/XX3Wj4-ieUmCNLRi_yMYl86SfqVLuKMknNIKKovpLpWUmm4lMKreEpWT7bunZkBnn_TfMHH4orYEWZPmZ0Flv4pkXdID6jDIBcFfAZ2hNf5osqrAGy_2LlFCG3cCBBt-kZ9yySnmfq0KnVx2-i1KGc5p6fij7rFZf4jbF-A0aV-yVw?purpose=inline"
+                        alt="Wholesale commerce and distribution"
+                        loading="lazy"
+                    >
+                </div>
+                <div class="gmx-card-content">
+                    <span class="card-number">04 / COMMERCE</span>
+                    <h3>Commerce &amp; Distribution</h3>
+                    <p>
+                        Facilitate wholesale trade, distribution
+                        partnerships and business-to-business supply,
+                        connecting buyers, suppliers and distributors
+                        across relevant commercial markets.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 05 DIGITAL PRODUCTS & PLATFORMS -->
+
+            <article class="gmx-card">
+                <div class="gmx-card-visual">
+                    <img
+                        src="https://images.openai.com/static-rsc-4/_EcQmMleT6LSfNWtwEh1eFRgtexXRo-_vzHPaRfWGYwB01_3JJY02AKaKOtELTL6pWEJAglq_Xhe8WsGd2CGW-0eiPdggWrBpAvA_eBvPbFY928T4CPfjswUskp7py5a0zRZB09vC9siEHamMs5-lYN5R0Nd-pnYNqp3Jcoper8?purpose=inline"
+                        alt="Digital commerce products and platforms"
+                        loading="lazy"
+                    >
+                </div>
+                <div class="gmx-card-content">
+                    <span class="card-number">05 / DIGITAL</span>
+                    <h3>Digital Products &amp; Platforms</h3>
+                    <p>
+                        Business tools, workflow automation, industry-specific
+                        software, dashboards, digital subscriptions and
+                        platforms that connect customers, vendors and
+                        service providers.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 06 GLOBAL BUSINESS CONNECTIONS -->
+
+            <article class="gmx-card">
+                <div class="gmx-card-visual">
+                    <img
+                        src="https://images.openai.com/static-rsc-4/YXIhf5t1KbiF6W0MiCcGR5aBLZw473yYsnDnTFrTPYKLb2_sC4Uzk2oCOt-l0tHcKIp9YsFgoKOjxGvbza_edR8epAwGG9XP_Tz5xT24kGIhNm970JnwgbSmsaDHFVwQRLzz97gtXKdU62uPb0vXUM5-P6OSQgUi3qa9cqQWcLA?purpose=inline"
+                        alt="International business and global commerce"
+                        loading="lazy"
+                    >
+                </div>
+                <div class="gmx-card-content">
+                    <span class="card-number">06 / NETWORK</span>
+                    <h3>Global Business Connections</h3>
+                    <p>
+                        Connect businesses across India and international
+                        markets through partner networks, supplier
+                        introductions, referrals, outsourcing relationships
+                        and cross-border commercial opportunities.
+                    </p>
+                </div>
             </article>
 
         </div>
 
-        <!-- GMX OPERATING MODEL -->
-
-        <h3 class="gmx-model-title">The GMX Growth Model</h3>
-
-        <div class="model-grid">
-
-            <article class="model-step">
-                <div class="step-icon" aria-hidden="true">◉</div>
-                <h4>Start Lean</h4>
-                <p>
-                    Use founder-led sales, low overheads, contractors
-                    and trusted partners instead of a large initial
-                    fixed-cost structure.
-                </p>
-            </article>
-
-            <article class="model-step">
-                <div class="step-icon" aria-hidden="true">◇</div>
-                <h4>Build Trust</h4>
-                <p>
-                    Win focused consulting assignments, deliver
-                    measurable value and develop lasting client
-                    relationships.
-                </p>
-            </article>
-
-            <article class="model-step">
-                <div class="step-icon" aria-hidden="true">⇄</div>
-                <h4>Connect Markets</h4>
-                <p>
-                    Match clients with qualified specialists,
-                    suppliers and delivery partners through
-                    transparent commercial arrangements.
-                </p>
-            </article>
-
-            <article class="model-step">
-                <div class="step-icon" aria-hidden="true">↗</div>
-                <h4>Grow Sustainably</h4>
-                <p>
-                    Add recurring services and proven digital
-                    products before expanding into more
-                    capital-intensive activities.
-                </p>
-            </article>
-
-        </div>
-
-        <!-- REVENUE MODEL -->
+        <!-- GMX REVENUE MODEL -->
 
         <div class="gmx-pricing">
 
@@ -1714,8 +1685,7 @@ footer {
                     <div class="price">$300–$750</div>
                     <p>
                         A defined assessment of business processes,
-                        technology gaps and practical improvement
-                        opportunities.
+                        technology gaps and improvement opportunities.
                     </p>
                 </article>
 
@@ -1723,8 +1693,8 @@ footer {
                     <h4>Automation Starter</h4>
                     <div class="price">$750–$2,000</div>
                     <p>
-                        A small, clearly scoped automation,
-                        integration or workflow improvement project.
+                        A small, clearly scoped automation, integration
+                        or workflow improvement engagement.
                     </p>
                 </article>
 
@@ -1733,8 +1703,7 @@ footer {
                     <div class="price">$2,000–$7,500</div>
                     <p>
                         A defined implementation covering agreed
-                        business requirements, configuration,
-                        delivery and handover.
+                        business requirements, configuration and delivery.
                     </p>
                 </article>
 
@@ -1742,9 +1711,8 @@ footer {
                     <h4>Managed Services</h4>
                     <div class="price">$250–$3,000+</div>
                     <p>
-                        Indicative monthly service agreements based
-                        on workload, support coverage and service
-                        commitments.
+                        Indicative monthly service agreements based on
+                        workload, support coverage and service commitments.
                     </p>
                 </article>
 
@@ -1752,43 +1720,27 @@ footer {
 
             <p class="gmx-disclaimer">
                 These are proposed pricing assumptions, not confirmed
-                sales or market quotations. Additional revenue may come
-                from project fees, retainers, approved referral fees,
-                sourcing commissions and digital product subscriptions.
-                Any referral or commission arrangement will be subject
-                to applicable laws and contractual requirements.
+                quotations. Potential revenue streams include consulting
+                fees, project fees, retainers, digital subscriptions,
+                sourcing commissions and permitted referral fees.
+                Commission arrangements remain subject to applicable
+                laws and contractual requirements.
             </p>
 
         </div>
 
         <!-- GMX POSITIONING -->
 
-        <div style="
-            margin-top:55px;
-            padding:30px;
-            text-align:center;
-            border:1px solid rgba(197,160,89,0.4);
-            background:rgba(255,255,255,0.035);
-            border-radius:7px;
-        ">
+        <div class="gmx-positioning">
             <span class="eyebrow">Our Positioning</span>
 
-            <h3 style="
-                color:#fff;
-                font-size:clamp(1.5rem,3vw,2.1rem);
-                margin-bottom:15px;
-            ">
-                Your Technology Partner for Smarter Business Growth
-            </h3>
+            <h3>Your Technology Partner for Smarter Business Growth</h3>
 
-            <p style="
-                max-width:780px;
-                margin:0 auto 22px;
-                color:#c7d2dc;
-            ">
-                GMX helps businesses access practical expertise,
-                technology services and trusted connections through
-                one flexible, relationship-driven business model.
+            <p>
+                GMX connects businesses with practical expertise,
+                technology services, products, suppliers and trusted
+                commercial relationships through one flexible,
+                relationship-driven business model.
             </p>
 
             <a href="#contact" class="btn btn-gold">
@@ -1799,9 +1751,7 @@ footer {
     </div>
 </section>
 
-<!-- =======================================================
-     VISION & VALUES
-     ======================================================= -->
+<!-- VISION & VALUES -->
 
 <section class="section section-light" id="vision">
     <div class="container">
@@ -1858,9 +1808,7 @@ footer {
     </div>
 </section>
 
-<!-- =======================================================
-     ABOUT THE FOUNDER
-     ======================================================= -->
+<!-- ABOUT THE FOUNDER -->
 
 <section class="section" id="founder">
     <div class="container founder-grid">
@@ -1881,13 +1829,9 @@ footer {
         <div class="founder-copy">
             <span class="eyebrow">About the Founder</span>
 
-            <h2>
-                Ramkumar Krishnasamy
-            </h2>
+            <h2>Ramkumar Krishnasamy</h2>
 
-            <h3>
-                Founder of RKY Group
-            </h3>
+            <h3>Founder of RKY Group</h3>
 
             <div class="gold-line" style="margin-left:0;"></div>
 
@@ -1931,9 +1875,7 @@ footer {
     </div>
 </section>
 
-<!-- =======================================================
-     CONTACT
-     ======================================================= -->
+<!-- CONTACT -->
 
 <section class="section contact-section" id="contact">
     <div class="container contact-grid">
@@ -1941,9 +1883,7 @@ footer {
         <div class="contact-copy">
             <span class="eyebrow">Let's Connect</span>
 
-            <h2>
-                Every great business begins with an opportunity.
-            </h2>
+            <h2>Every great business begins with an opportunity.</h2>
 
             <div class="gold-line" style="margin-left:0;"></div>
 
@@ -1965,15 +1905,12 @@ footer {
                 <div class="contact-point">
                     <span>◇</span> Business and technology consulting
                 </div>
-
                 <div class="contact-point">
                     <span>◇</span> Partnerships and specialist services
                 </div>
-
                 <div class="contact-point">
                     <span>◇</span> Sourcing and commercial opportunities
                 </div>
-
                 <div class="contact-point">
                     <span>◇</span> Digital products and managed services
                 </div>
@@ -2016,24 +1953,14 @@ footer {
                     <label for="interest">Area of Interest</label>
                     <select id="interest" name="interest" required>
                         <option value="">Select an area</option>
-                        <option value="RKY Group Partnership">
-                            RKY Group Partnership
-                        </option>
-                        <option value="GMX Consulting">
-                            GMX Consulting &amp; Advisory
-                        </option>
-                        <option value="Digital Solutions">
-                            Digital Solutions &amp; Automation
-                        </option>
-                        <option value="Managed Services">
-                            Managed Services
-                        </option>
-                        <option value="Trade and Sourcing">
-                            Trade &amp; Sourcing
-                        </option>
-                        <option value="Other">
-                            Other Opportunity
-                        </option>
+                        <option value="RKY Group Partnership">RKY Group Partnership</option>
+                        <option value="GMX Consulting">GMX Consulting &amp; Advisory</option>
+                        <option value="Digital Solutions">Digital Solutions &amp; Automation</option>
+                        <option value="Managed Services">Managed Services</option>
+                        <option value="Trade and Sourcing">Trade &amp; Sourcing</option>
+                        <option value="Commerce and Distribution">Commerce &amp; Distribution</option>
+                        <option value="Global Business Connections">Global Business Connections</option>
+                        <option value="Other">Other Opportunity</option>
                     </select>
                 </div>
 
@@ -2064,9 +1991,7 @@ footer {
 
 </main>
 
-<!-- =======================================================
-     FOOTER
-     ======================================================= -->
+<!-- FOOTER -->
 
 <footer>
     <div class="container">
@@ -2104,6 +2029,7 @@ footer {
                 <a href="#gmx">Digital Solutions</a>
                 <a href="#gmx">Managed Services</a>
                 <a href="#gmx">Trade &amp; Sourcing</a>
+                <a href="#gmx">Commerce &amp; Distribution</a>
                 <a href="#contact">Partnership Enquiries</a>
             </div>
 
@@ -2114,7 +2040,6 @@ footer {
                 © <span id="currentYear"></span> RKY Group.
                 All rights reserved.
             </div>
-
             <div>
                 <span>GMX — Connecting Businesses. Creating Opportunities.</span>
             </div>
@@ -2123,9 +2048,7 @@ footer {
     </div>
 </footer>
 
-<!-- =======================================================
-     JAVASCRIPT
-     ======================================================= -->
+<!-- JAVASCRIPT -->
 
 <script>
 (function () {
@@ -2200,7 +2123,7 @@ footer {
 
             window.alert(content);
         }
-    );
+    });
 })();
 </script>
 

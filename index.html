@@ -1,873 +1,1158 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NW0FG8N6Y6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-NW0FG8N6Y6');
-</script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RKY Group of Companies | Global Corporate Homepage</title>
-    <meta name="description" content="RKY Group of Companies — technology, commerce, connectivity, retail and financial services. Introducing GMX, General Merchant Exchange, an upcoming RKY Group venture.">
-
-    <style>
-        :root {
-            --corporate-blue: #1a2e40;
-            --premium-gold: #c5a059;
-            --accent-gold: #b38f43;
-            --bg-light: #f4f6f8;
-            --text-main: #2b3641;
-            --text-muted: #5c6b73;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 110px;
-        }
-
-        body {
-            background-color: var(--white);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: var(--corporate-blue);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-area {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-main {
-            font-size: 26px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            color: var(--white);
-            text-decoration: none;
-        }
-
-        .logo-sub {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--premium-gold);
-            margin-top: 2px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #e0e6ed;
-            margin-left: 25px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--premium-gold);
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #11202e 0%, #223a52 100%);
-            color: var(--white);
-            padding: 190px 20px 100px;
-            text-align: center;
-        }
-
-        .logo-display-container {
-            max-width: 650px;
-            margin: 0 auto 30px;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid rgba(197, 160, 89, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .corporate-logo-img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 4px;
-        }
-
-        .hero h1 {
-            font-size: 38px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-            color: var(--white);
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: #cbd5e1;
-            max-width: 700px;
-            margin: 0 auto;
-            font-weight: 300;
-        }
-
-        .badge-tagline {
-            display: inline-block;
-            border: 1px solid var(--premium-gold);
-            color: var(--premium-gold);
-            padding: 6px 16px;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
-            border-radius: 2px;
-        }
-
-        section {
-            padding: 90px 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-size: 32px;
-            color: var(--corporate-blue);
-            margin-bottom: 15px;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            max-width: 650px;
-            margin: 0 auto;
-            font-size: 16px;
-        }
-
-        .subsidiary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-            gap: 30px;
-        }
-
-        .subsidiary-card {
-            background-color: var(--bg-light);
-            border: 1px solid #e2e8f0;
-            padding: 35px;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 300px;
-        }
-
-        .subsidiary-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--premium-gold);
-            background-color: var(--white);
-            box-shadow: 0 10px 25px rgba(26, 46, 64, 0.08);
-        }
-
-        .sub-meta {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--accent-gold);
-            font-weight: 600;
-            margin-bottom: 10px;
-            display: inline-block;
-        }
-
-        .subsidiary-card h3 {
-            font-size: 22px;
-            color: var(--corporate-blue);
-            margin-bottom: 15px;
-        }
-
-        .subsidiary-card p {
-            color: var(--text-muted);
-            font-size: 15px;
-            margin-bottom: 25px;
-        }
-
-        .subsidiary-card strong {
-            color: var(--corporate-blue);
-        }
-
-        .sub-link {
-            text-decoration: none;
-            color: var(--corporate-blue);
-            font-size: 14px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            margin-top: auto;
-            align-self: flex-start;
-        }
-
-        .sub-link:hover {
-            color: var(--accent-gold);
-        }
-
-        .coming-soon {
-            display: inline-block;
-            width: fit-content;
-            padding: 5px 10px;
-            margin: 0 0 18px;
-            border: 1px solid var(--premium-gold);
-            color: var(--corporate-blue);
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 1.4px;
-            text-transform: uppercase;
-            border-radius: 2px;
-        }
-
-        .gmx-card {
-            background: linear-gradient(145deg, #f4f6f8 0%, #ffffff 100%);
-            border-top: 3px solid var(--premium-gold);
-        }
-
-        .gmx-mark {
-            display: inline-block;
-            font-size: 29px;
-            line-height: 1.2;
-            letter-spacing: 3px;
-            font-weight: 800;
-            color: var(--corporate-blue);
-            margin-bottom: 12px;
-        }
-
-        .governance-sec {
-            background-color: var(--bg-light);
-        }
-
-        .gov-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .gov-text h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: var(--corporate-blue);
-        }
-
-        .gov-text p {
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .founder-section {
-            position: relative;
-            min-height: 760px;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            background-color: #101c27;
-            color: var(--white);
-        }
-
-        .founder-section::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: url("founder.jpg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            filter: grayscale(100%);
-            opacity: 0.58;
-            transform: scale(1.03);
-            z-index: 0;
-        }
-
-        .founder-section::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                90deg,
-                rgba(10, 20, 29, 0.96) 0%,
-                rgba(15, 26, 36, 0.86) 42%,
-                rgba(15, 26, 36, 0.65) 72%,
-                rgba(15, 26, 36, 0.72) 100%
-            );
-            z-index: 1;
-        }
-
-        .founder-content {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 100px 20px;
-        }
-
-        .founder-text {
-            max-width: 780px;
-        }
-
-        .founder-text .founder-meta {
-            color: var(--premium-gold);
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .founder-text h2 {
-            font-size: 46px;
-            line-height: 1.15;
-            margin-bottom: 25px;
-            color: var(--white);
-            letter-spacing: 0.5px;
-        }
-
-        .founder-text h3 {
-            font-size: 22px;
-            line-height: 1.5;
-            font-weight: 400;
-            color: var(--premium-gold);
-            margin-bottom: 30px;
-        }
-
-        .founder-text p {
-            font-size: 17px;
-            line-height: 1.9;
-            color: #d9e1e8;
-            margin-bottom: 22px;
-        }
-
-        .founder-text strong {
-            color: var(--white);
-        }
-
-        .founder-quote {
-            margin-top: 38px;
-            padding: 25px 30px;
-            border-left: 3px solid var(--premium-gold);
-            background: rgba(255, 255, 255, 0.055);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            font-size: 21px;
-            line-height: 1.6;
-            color: var(--white);
-            font-style: italic;
-        }
-
-        .founder-signature {
-            margin-top: 30px;
-            color: var(--premium-gold);
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-        }
-
-        .contact-box {
-            background-color: var(--corporate-blue);
-            color: var(--white);
-            padding: 60px;
-            border-radius: 4px;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .contact-box h2 {
-            font-size: 30px;
-            margin-bottom: 15px;
-            color: var(--premium-gold);
-        }
-
-        .contact-box p {
-            margin-bottom: 30px;
-            color: #cbd5e1;
-        }
-
-        .contact-btn {
-            display: inline-block;
-            background-color: var(--premium-gold);
-            color: var(--corporate-blue);
-            padding: 14px 35px;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 3px;
-            transition: background 0.3s;
-        }
-
-        .contact-btn:hover {
-            background-color: var(--white);
-        }
-
-        footer {
-            background-color: #0f1a24;
-            color: #94a3b8;
-            padding: 40px 20px;
-            text-align: center;
-            font-size: 14px;
-            border-top: 1px solid #1e293b;
-        }
-
-        @media (max-width: 768px) {
-            html {
-                scroll-padding-top: 145px;
-            }
-
-            .nav-container {
-                flex-direction: column;
-                gap: 12px;
-                padding: 15px 12px;
-            }
-
-            nav {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 8px 16px;
-            }
-
-            nav a {
-                margin: 0;
-                font-size: 12px;
-            }
-
-            .hero {
-                padding: 210px 18px 75px;
-            }
-
-            .hero h1 {
-                font-size: 30px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .logo-display-container {
-                padding: 10px;
-            }
-
-            section {
-                padding: 65px 18px;
-            }
-
-            .section-header {
-                margin-bottom: 35px;
-            }
-
-            .section-header h2 {
-                font-size: 27px;
-            }
-
-            .subsidiary-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .subsidiary-card {
-                padding: 28px;
-                min-height: 260px;
-            }
-
-            .gov-content {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .gov-content > .gov-text[style] {
-                border-left: none !important;
-                border-top: 2px solid #e2e8f0;
-                padding: 25px 0 0 !important;
-            }
-
-            .founder-section {
-                min-height: auto;
-            }
-
-            .founder-section::before {
-                background-position: center top;
-                background-size: cover;
-                opacity: 0.65;
-            }
-
-            .founder-section::after {
-                background: linear-gradient(
-                    rgba(10, 20, 29, 0.76),
-                    rgba(15, 26, 36, 0.84)
-                );
-            }
-
-            .founder-content {
-                padding: 75px 20px;
-            }
-
-            .founder-text h2 {
-                font-size: 34px;
-            }
-
-            .founder-text h3 {
-                font-size: 19px;
-            }
-
-            .founder-text p {
-                font-size: 16px;
-                line-height: 1.8;
-            }
-
-            .founder-quote {
-                font-size: 18px;
-                padding: 20px;
-            }
-
-            .contact-box {
-                padding: 40px 22px;
-            }
-
-            .contact-box h2 {
-                font-size: 26px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RKY Group | A Global Business Group</title>
+
+  <meta name="description" content="RKY Group brings together businesses across telecommunications, retail, financial services, IT consulting and commercial services through innovation, trusted partnerships and long-term growth.">
+
+  <meta name="theme-color" content="#1a2e40">
+
+  <style>
+    :root {
+      --navy: #1a2e40;
+      --navy-light: #243e55;
+      --gold: #c5a059;
+      --gold-light: #dfc58d;
+      --white: #ffffff;
+      --background: #f6f7f9;
+      --text: #263442;
+      --muted: #687582;
+      --border: #e1e5e9;
+      --shadow: 0 8px 28px rgba(26, 46, 64, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: 0 auto;
+    }
+
+    /* Navigation */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--navy);
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      color: var(--white);
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      font-size: 13px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .menu-toggle {
+      display: none;
+      color: var(--white);
+      background: transparent;
+      border: 1px solid var(--gold);
+      border-radius: 5px;
+      padding: 7px 11px;
+      font-size: 23px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+
+    .hero {
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(197, 160, 89, 0.15),
+          transparent 35%
+        ),
+        linear-gradient(135deg, #142636, #243e55);
+      color: var(--white);
+      padding: 110px 0 105px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 66px);
+      line-height: 1.15;
+      margin-bottom: 22px;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto 30px;
+      color: #e2e8ee;
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 25px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .button-gold {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .button-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      border: 1px solid var(--gold);
+      color: var(--white);
+      margin-left: 10px;
+    }
+
+    .button-outline:hover {
+      background: rgba(197, 160, 89, 0.12);
+    }
+
+    /* General sections */
+
+    section {
+      padding: 82px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 790px;
+      margin: 0 auto 44px;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: clamp(28px, 4vw, 39px);
+      line-height: 1.25;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .gold-line {
+      width: 65px;
+      height: 3px;
+      background: var(--gold);
+      margin: 19px auto;
+    }
+
+    /* About RKY Group */
+
+    .about-group {
+      background: var(--white);
+    }
+
+    .about-copy {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 17px;
+      line-height: 1.95;
+    }
+
+    /* Companies */
+
+    .companies {
+      background: var(--background);
+    }
+
+    .company-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .company-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--gold);
+      border-radius: 7px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease;
+    }
+
+    .company-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .company-category {
+      color: #a17c37;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+
+    .company-card h3 {
+      color: var(--navy);
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .company-card p {
+      color: var(--muted);
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .company-link {
+      color: #916c2b;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .company-link:hover {
+      text-decoration: underline;
+    }
+
+    /* GMX */
+
+    .gmx-section {
+      background: #f4f5f7;
+    }
+
+    .gmx-intro {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    .gmx-intro h3 {
+      color: #9c7838;
+      font-size: clamp(22px, 3vw, 29px);
+      margin-bottom: 18px;
+    }
+
+    .gmx-intro p {
+      font-size: 16px;
+      line-height: 1.95;
+      margin-bottom: 15px;
+    }
+
+    .gmx-principle {
+      background: var(--navy);
+      color: var(--white);
+      padding: 30px;
+      border-radius: 7px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .gmx-principle h3 {
+      color: var(--gold-light);
+      font-size: 23px;
+      margin-bottom: 12px;
+    }
+
+    .gmx-principle p {
+      max-width: 800px;
+      margin: 0 auto;
+      color: #e2e8ee;
+    }
+
+    .gmx-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .gmx-card {
+      background: var(--white);
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--gold);
+      border-radius: 6px;
+      box-shadow: 0 4px 16px rgba(26, 46, 64, 0.04);
+    }
+
+    .gmx-number {
+      display: inline-block;
+      color: #ad8741;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .gmx-card h4 {
+      color: var(--navy);
+      font-size: 19px;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .gmx-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    .gmx-approach {
+      background: var(--navy);
+      color: var(--white);
+      margin-top: 40px;
+      padding: 36px;
+      border-radius: 7px;
+      text-align: center;
+    }
+
+    .gmx-approach h3 {
+      color: var(--gold-light);
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .gmx-approach p {
+      max-width: 850px;
+      margin: 0 auto;
+      color: #e2e8ee;
+    }
+
+    .gmx-pillars {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .gmx-pillars span {
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .gmx-tagline {
+      text-align: center;
+      color: var(--navy);
+      font-size: 19px;
+      font-weight: 700;
+      margin-top: 32px;
+    }
+
+    /* About the founder */
+
+    .founder-section {
+      background: var(--white);
+    }
+
+    .founder-layout {
+      display: grid;
+      grid-template-columns: 0.85fr 1.5fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .founder-visual {
+      min-height: 340px;
+      border-radius: 8px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(26, 46, 64, 0.93),
+          rgba(26, 46, 64, 0.77)
+        ),
+        url("founder.jpg") center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .founder-visual p {
+      color: var(--gold-light);
+      font-size: 23px;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .founder-copy .eyebrow {
+      margin-bottom: 10px;
+    }
+
+    .founder-copy h2 {
+      color: var(--navy);
+      font-size: 34px;
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+
+    .founder-copy p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .founder-copy strong {
+      color: var(--navy);
+    }
+
+    /* Vision */
+
+    .vision-section {
+      background: #f2f4f6;
+    }
+
+    .vision-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .vision-card {
+      text-align: center;
+      padding: 28px 23px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+    }
+
+    .vision-card h3 {
+      color: var(--navy);
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .vision-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Contact */
+
+    .contact-section {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size: clamp(28px, 4vw, 38px);
+      margin-bottom: 16px;
+    }
+
+    .contact-section .section-heading h2 {
+      color: var(--white);
+    }
+
+    .contact-section .section-heading p {
+      color: #d7e0e8;
+    }
+
+    .contact-section .button {
+      margin-top: 15px;
+    }
+
+    /* Footer */
+
+    .footer {
+      background: #122331;
+      color: #d0d9e1;
+      padding: 28px 0;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .footer strong {
+      color: var(--gold-light);
+    }
+
+    .footer p + p {
+      margin-top: 6px;
+    }
+
+    /* Responsive layout */
+
+    @media (max-width: 900px) {
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .gmx-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .founder-layout {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-inner {
+        min-height: 68px;
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        font-size: 22px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
+        padding-bottom: 12px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 11px 3px;
+        font-size: 14px;
+      }
+
+      .hero {
+        padding: 76px 0;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .button-outline {
+        margin: 12px 0 0;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .company-grid,
+      .gmx-grid,
+      .vision-grid,
+      .founder-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .founder-visual {
+        min-height: 260px;
+      }
+
+      .founder-copy h2 {
+        font-size: 29px;
+      }
+
+      .gmx-approach {
+        padding: 27px 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="nav-container">
-            <div class="logo-area">
-                <a href="#" class="logo-main">RKY GROUP</a>
-                <span class="logo-sub">Of Companies</span>
-            </div>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-inner">
 
-            <nav aria-label="Main navigation">
-                <a href="#about">About the Group</a>
-                <a href="#subsidiaries">Our Companies</a>
-                <a href="#founder">About the Founder</a>
-                <a href="#contact">Corporate HQ</a>
-            </nav>
-        </div>
-    </header>
+      <a href="#home" class="brand" aria-label="RKY Group home">
+        RKY<span>GROUP</span>
+      </a>
 
-    <!-- Hero Banner -->
-    <div class="hero">
-        <div class="logo-display-container">
-            <img
-                src="RKYGROUPLogo.jpg"
-                alt="RKY Group Logo"
-                class="corporate-logo-img"
-            >
-        </div>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+        type="button">
+        &#9776;
+      </button>
 
-        <span class="badge-tagline">Corporate Headquarters</span>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#companies">Our Companies</a></li>
+          <li><a href="#gmx">GMX Business Model</a></li>
+          <li><a href="#founder">Founder</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-        <h1>Driving Progress Across Diverse Sectors</h1>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="container">
+
+        <p class="eyebrow">A RKY Group Enterprise</p>
+
+        <h1>
+          Building Businesses.<br>
+          <span>Connecting Opportunities.</span>
+        </h1>
 
         <p>
-            RKY Group of Companies is building a multi-sector business
-            ecosystem focused on innovation, sustainable growth and
-            socio-economic value creation.
+          RKY Group is a growing business group with a vision to connect
+          industries, enable innovation and build sustainable commercial
+          opportunities through technology, trusted partnerships and
+          entrepreneurial thinking.
         </p>
-    </div>
 
-    <!-- About Parent Organization -->
-    <section id="about" class="governance-sec">
-        <div class="container">
-            <div class="gov-content">
-                <div class="gov-text">
-                    <span class="sub-meta">Corporate Profile</span>
+        <a href="#companies" class="button button-gold">
+          Explore Our Businesses
+        </a>
 
-                    <h3>Strategic Oversight. Shared Values.</h3>
+        <a href="#gmx" class="button button-outline">
+          Discover GMX
+        </a>
 
-                    <p>
-                        RKY Group brings together a long-term vision for
-                        businesses across technology, connectivity,
-                        consumer services and other commercial sectors.
-                    </p>
-
-                    <p>
-                        Our guiding principle is simple:
-                        <strong>Wealth creation for the common man.</strong>
-                    </p>
-                </div>
-
-                <div class="gov-text"
-                     style="border-left: 2px solid #e2e8f0; padding-left: 30px;">
-                    <h3>Our Ecosystem Strategy</h3>
-
-                    <p>
-                        We aim to build sustainable business capabilities
-                        that widen access to technology, services and
-                        economic opportunity. Each venture will develop
-                        progressively, guided by practical needs and
-                        long-term goals.
-                    </p>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <!-- Group Companies -->
-    <section id="subsidiaries">
-        <div class="container">
-            <div class="section-header">
-                <span class="sub-meta">Our Companies &amp; Ventures</span>
+    <!-- About RKY Group -->
+    <section class="about-group" id="about">
+      <div class="container">
 
-                <h2>Businesses Built for Everyday Progress</h2>
-
-                <p>
-                    RKY Group's business vision spans connectivity,
-                    retail, financial services and technology delivery,
-                    with new ventures planned for the future.
-                </p>
-            </div>
-
-            <div class="subsidiary-grid">
-
-                <!-- RKY Telecom -->
-                <article class="subsidiary-card">
-                    <div>
-                        <span class="sub-meta">Telecommunications</span>
-                        <h3>RKY Telecom</h3>
-
-                        <p>
-                            <strong>RIO Mobile</strong> —
-                            A mobile service provider focused on
-                            accessible, reliable connectivity and
-                            communications services.
-                        </p>
-                    </div>
-
-                    <a href="#" class="sub-link">
-                        Explore RIO Mobile &rarr;
-                    </a>
-                </article>
-
-                <!-- RKY Retail -->
-                <article class="subsidiary-card">
-                    <div>
-                        <span class="sub-meta">Retail &amp; Lifestyle</span>
-                        <h3>RKY Retail</h3>
-
-                        <p>
-                            <strong>RIO LIFE</strong> —
-                            A consumer-focused retail and lifestyle
-                            business serving everyday needs through
-                            a modern customer experience.
-                        </p>
-                    </div>
-
-                    <a href="#" class="sub-link">
-                        Explore RIO LIFE &rarr;
-                    </a>
-                </article>
-
-                <!-- RKY Capital -->
-                <article class="subsidiary-card">
-                    <div>
-                        <span class="sub-meta">Financial Services</span>
-                        <h3>RKY Capital</h3>
-
-                        <p>
-                            <strong>RIO Financial</strong> —
-                            A planned financial services platform
-                            focused on accessible financial and
-                            investment solutions, subject to applicable
-                            regulatory requirements.
-                        </p>
-                    </div>
-
-                    <a href="#" class="sub-link">
-                        Explore RIO Financial &rarr;
-                    </a>
-                </article>
-
-                <!-- RKY IT Outsourcing -->
-                <article class="subsidiary-card">
-                    <div>
-                        <span class="sub-meta">Technology Services</span>
-                        <h3>RKY IT Outsourcing — India</h3>
-
-                        <p>
-                            <strong>Global Technology Delivery</strong> —
-                            IT outsourcing and technology services
-                            delivered from India, supporting application
-                            development, technology operations and
-                            global business needs.
-                        </p>
-                    </div>
-
-                    <a href="#" class="sub-link">
-                        Explore Technology Services &rarr;
-                    </a>
-                </article>
-
-                <!-- NEW: GMX -->
-                <article class="subsidiary-card gmx-card">
-                    <div>
-                        <span class="sub-meta">Technology &amp; Business Services</span>
-
-                        <div class="gmx-mark">GMX</div>
-
-                        <h3>General Merchant Exchange</h3>
-
-                        <span class="coming-soon">Upcoming Venture</span>
-
-                        <p>
-                            GMX is an emerging business concept under
-                            the RKY Group vision, initially focused on
-                            IT consulting, technology project management,
-                            business analysis and digital transformation.
-                            Over time, it aims to explore broader
-                            commercial opportunities.
-                        </p>
-                    </div>
-
-                    <span class="sub-link">
-                        A new venture in development
-                    </span>
-                </article>
-
-            </div>
+        <div class="section-heading">
+          <p class="eyebrow">Who We Are</p>
+          <h2>About RKY Group</h2>
+          <div class="gold-line"></div>
+          <p>
+            A growing group built around enterprise, innovation,
+            collaboration and long-term value creation.
+          </p>
         </div>
+
+        <div class="about-copy">
+          <p>
+            RKY Group brings together a vision for building businesses
+            across technology, telecommunications, retail, financial
+            services and commercial solutions. Our approach is grounded
+            in practical problem-solving, responsible growth and
+            partnerships that create value for customers and businesses.
+          </p>
+
+          <p style="margin-top: 18px;">
+            We aim to build a connected portfolio of businesses that
+            can serve changing market needs, develop new capabilities
+            and pursue opportunities across geographies. Through our
+            ventures, we seek to combine entrepreneurial agility with
+            a long-term commitment to trust, quality and sustainable growth.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Our Companies -->
+    <section class="companies" id="companies">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">Our Business Portfolio</p>
+          <h2>Our Companies</h2>
+          <div class="gold-line"></div>
+          <p>
+            Our portfolio brings together business concepts spanning
+            digital connectivity, lifestyle, financial services,
+            technology and commercial solutions.
+          </p>
+        </div>
+
+        <div class="company-grid">
+
+          <article class="company-card">
+            <p class="company-category">Telecommunications</p>
+            <h3>RKY Telecom</h3>
+            <p>
+              <strong>RIO Mobile</strong> — a mobile service provider
+              concept focused on accessible, reliable connectivity
+              and communications services.
+            </p>
+            <a class="company-link"
+               href="#contact">
+              Business enquiries &rarr;
+            </a>
+          </article>
+
+          <article class="company-card">
+            <p class="company-category">Retail &amp; Lifestyle</p>
+            <h3>RKY Retail</h3>
+            <p>
+              <strong>RIO LIFE</strong> — a consumer-focused retail
+              and lifestyle business concept designed to explore
+              products, services and everyday customer needs.
+            </p>
+            <a class="company-link"
+               href="#contact">
+              Business enquiries &rarr;
+            </a>
+          </article>
+
+          <article class="company-card">
+            <p class="company-category">Financial Services</p>
+            <h3>RKY Capital</h3>
+            <p>
+              <strong>RIO Financial</strong> — a financial services
+              platform concept focused on exploring accessible
+              financial and investment solutions, subject to
+              applicable regulatory requirements.
+            </p>
+            <a class="company-link"
+               href="#contact">
+              Business enquiries &rarr;
+            </a>
+          </article>
+
+          <article class="company-card">
+            <p class="company-category">IT Consulting &amp; Commercial Services</p>
+            <h3>General Merchant Inc. (GMX)</h3>
+            <p>
+              A modern commercial house envisioned to connect
+              businesses with consulting expertise, suppliers,
+              products, managed services and new commercial opportunities.
+            </p>
+            <a class="company-link"
+               href="#gmx">
+              Explore the GMX business model &rarr;
+            </a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GMX Business Model -->
+    <section class="gmx-section" id="gmx">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">A New Commercial Vision</p>
+          <h2>General Merchant Inc. (GMX)</h2>
+          <div class="gold-line"></div>
+          <p>
+            A modern general merchant for the digital economy.
+          </p>
+        </div>
+
+        <div class="gmx-intro">
+          <h3>Inspired by the Spirit of the Historic General Merchant</h3>
+
+          <p>
+            Throughout commercial history, general merchants helped
+            connect producers, suppliers, buyers and markets. Their
+            value extended beyond selling goods: they built
+            relationships, sourced what customers needed, coordinated
+            transactions and helped commerce move forward.
+          </p>
+
+          <p>
+            GMX aims to bring this principle into the modern business
+            environment. Our vision is to build a broad commercial house
+            that helps businesses access the expertise, technology,
+            products, services and partnerships they need to operate
+            and grow.
+          </p>
+
+          <p>
+            Beginning with IT consulting, business services and
+            supplier sourcing, GMX intends to expand into managed
+            services, commercial trade, distribution and digital
+            business solutions as opportunities develop.
+          </p>
+        </div>
+
+        <div class="gmx-principle">
+          <h3>One Commercial House. Multiple Opportunities.</h3>
+          <p>
+            GMX will connect customers with the right expertise,
+            source suitable solutions, coordinate trusted partners
+            and develop lasting business relationships — starting
+            lean and expanding in response to real customer demand.
+          </p>
+        </div>
+
+        <div class="gmx-grid">
+
+          <article class="gmx-card">
+            <span class="gmx-number">01</span>
+            <h4>Consulting &amp; Advisory</h4>
+            <p>
+              IT consulting, project and programme management,
+              business analysis, digital transformation, technology
+              implementation support and business process improvement.
+            </p>
+          </article>
+
+          <article class="gmx-card">
+            <span class="gmx-number">02</span>
+            <h4>Trade &amp; Sourcing</h4>
+            <p>
+              Connecting buyers with trusted suppliers, identifying
+              products and service providers, coordinating quotations
+              and facilitating commercial partnerships.
+            </p>
+          </article>
+
+          <article class="gmx-card">
+            <span class="gmx-number">03</span>
+            <h4>Managed Services</h4>
+            <p>
+              Coordinating ongoing IT support, cloud administration,
+              reporting, software services and specialist business
+              operations through qualified delivery partners.
+            </p>
+          </article>
+
+          <article class="gmx-card">
+            <span class="gmx-number">04</span>
+            <h4>Commerce &amp; Distribution</h4>
+            <p>
+              Exploring business supplies, technology products,
+              wholesale opportunities, distribution partnerships
+              and supplier-led fulfilment based on validated demand.
+            </p>
+          </article>
+
+          <article class="gmx-card">
+            <span class="gmx-number">05</span>
+            <h4>Digital Products &amp; Platforms</h4>
+            <p>
+              Developing opportunities for business software,
+              subscription services, digital tools and online
+              platforms that connect businesses with relevant
+              products and service providers.
+            </p>
+          </article>
+
+          <article class="gmx-card">
+            <span class="gmx-number">06</span>
+            <h4>Global Business Connections</h4>
+            <p>
+              Building relationships between businesses, suppliers,
+              consultants and commercial partners to support sourcing,
+              collaboration and international market opportunities.
+            </p>
+          </article>
+
+        </div>
+
+        <!-- GMX Business Model -->
+        <div class="gmx-approach">
+          <h3>Our Business Model</h3>
+
+          <p>
+            GMX will adopt a lean, partnership-led approach. We will
+            initially generate revenue through consulting, sourcing
+            and project-based services, then build recurring income
+            through managed services and expand into selected
+            commercial trading opportunities.
+          </p>
+
+          <p style="margin-top: 15px;">
+            Over time, proven services and customer relationships
+            may support digital products, online marketplaces and
+            additional business categories. Expansion will be guided
+            by customer demand, partner capability, sustainable
+            margins and disciplined investment.
+          </p>
+
+          <div class="gmx-pillars">
+            <span>Start Lean</span>
+            <span>Build Trust</span>
+            <span>Partner to Deliver</span>
+            <span>Create Recurring Revenue</span>
+            <span>Expand Responsibly</span>
+          </div>
+        </div>
+
+        <p class="gmx-tagline">
+          GMX — Connecting Businesses. Creating Opportunities. Enabling Growth.
+        </p>
+
+      </div>
     </section>
 
     <!-- About the Founder -->
-    <section id="founder" class="founder-section">
-        <div class="founder-content">
-            <div class="founder-text">
-                <div class="founder-meta">About the Founder</div>
+    <section class="founder-section" id="founder">
+      <div class="container">
 
-                <h2>
-                    Building with Purpose.
-                    Thinking Beyond the Present.
-                </h2>
+        <div class="founder-layout">
 
-                <h3>
-                    Inspired by long-term thinking,
-                    institution building and service to society.
-                </h3>
+          <div class="founder-visual">
+            <p>
+              Leadership with Vision.<br>
+              Enterprise with Purpose.
+            </p>
+          </div>
 
-                <p>
-                    <strong>Ramkumar Krishnasamy (RKY)</strong> founded
-                    RKY Group with the belief that businesses can be more
-                    than commercial enterprises — they can become
-                    instruments for expanding access to technology,
-                    opportunity, financial participation and a better
-                    quality of life.
-                </p>
+          <div class="founder-copy">
+            <p class="eyebrow">Leadership &amp; Vision</p>
 
-                <p>
-                    The founder's thinking has been deeply influenced by
-                    the ideas and legacy of
-                    <strong>Lee Kuan Yew (LKY)</strong> — particularly
-                    the importance of long-term thinking, institution
-                    building, discipline, pragmatism and the belief that
-                    meaningful progress requires sustained effort
-                    across generations.
-                </p>
+            <h2>About the Founder</h2>
 
-                <p>
-                    RKY does not seek to replicate Singapore or reproduce
-                    another country's journey. Instead, the intention is
-                    to carry forward enduring ideas: think beyond the
-                    immediate, build strong foundations, invest in
-                    people, create capable institutions and pursue
-                    progress that can benefit society over the long term.
-                </p>
+            <p>
+              <strong>Ramkumar Krishnasamy (RKY)</strong> founded
+              RKY Group with a vision to build businesses that connect
+              people, ideas, technology and commercial opportunities.
+            </p>
 
-                <p>
-                    This philosophy forms part of the foundation behind
-                    RKY Group — building businesses today while keeping
-                    an eye on the opportunities and responsibilities
-                    of tomorrow.
-                </p>
+            <p>
+              Influenced by the leadership, strategic thinking and
+              nation-building philosophy of Lee Kuan Yew, RKY aspires
+              to carry forward the values of long-term vision,
+              institution-building, discipline and practical execution
+              into the future.
+            </p>
 
-                <div class="founder-quote">
-                    “The future is built not by what we inherit,
-                    but by what we choose to build, preserve and
-                    pass forward.”
-                </div>
+            <p>
+              This philosophy is reflected in the ambition behind
+              RKY Group: to develop enduring businesses, create
+              meaningful commercial relationships and pursue growth
+              through innovation, responsibility and collaboration.
+            </p>
 
-                <div class="founder-signature">
-                    RKY Group of Companies
-                </div>
-            </div>
+            <p>
+              Through its evolving portfolio of ventures, RKY Group
+              seeks to turn ideas into practical businesses and
+              build a platform for future generations of enterprise.
+            </p>
+          </div>
+
         </div>
+
+      </div>
     </section>
 
-    <!-- Corporate Contact -->
-    <section id="contact">
-        <div class="container">
-            <div class="contact-box">
-                <h2>Connect with RKY Group</h2>
+    <!-- Vision and Values -->
+    <section class="vision-section">
+      <div class="container">
 
-                <p>
-                    For corporate enquiries, partnerships,
-                    business opportunities and collaborations.
-                </p>
-
-                <!-- Replace this placeholder with your official
-                     business email or verified contact page. -->
-                <a href="mailto:YOUR-BUSINESS-EMAIL@example.com"
-                   class="contact-btn">
-                    Contact Corporate HQ
-                </a>
-            </div>
+        <div class="section-heading">
+          <p class="eyebrow">Our Guiding Principles</p>
+          <h2>Our Vision for the Future</h2>
+          <div class="gold-line"></div>
+          <p>
+            Building a connected group of businesses through
+            thoughtful strategy, strong relationships and responsible
+            execution.
+          </p>
         </div>
+
+        <div class="vision-grid">
+
+          <article class="vision-card">
+            <h3>Long-Term Thinking</h3>
+            <p>
+              Building sustainable businesses with a clear purpose
+              and an enduring view of growth.
+            </p>
+          </article>
+
+          <article class="vision-card">
+            <h3>Trust &amp; Partnerships</h3>
+            <p>
+              Creating value through dependable relationships with
+              customers, suppliers and business partners.
+            </p>
+          </article>
+
+          <article class="vision-card">
+            <h3>Innovation &amp; Enterprise</h3>
+            <p>
+              Exploring new ideas, applying technology and developing
+              practical solutions to changing business needs.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>
-            &copy; 2026 RKY Group of Companies. All rights reserved.
-        </p>
-        <p style="margin-top: 8px; font-size: 12px;">
-            GMX is an upcoming venture. Its inclusion on this website
-            does not imply that it has been incorporated or that any
-            regulated financial exchange is operating.
-        </p>
-    </footer>
+    <!-- Contact -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">Connect With Us</p>
+          <h2>Let's Explore Opportunities Together</h2>
+          <div class="gold-line"></div>
+
+          <p>
+            We welcome enquiries from customers, suppliers, consultants,
+            technology partners and businesses interested in exploring
+            potential collaborations with RKY Group and GMX.
+          </p>
+
+          <!-- Replace the example email below with your official
+               business contact email before publishing. -->
+          <a
+            class="button button-gold"
+            href="mailto:YOUR-BUSINESS-EMAIL@example.com?subject=Business%20Enquiry%20-%20RKY%20Group">
+            Contact RKY Group
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        &copy; <span id="currentYear"></span>
+        <strong>RKY Group</strong>. All rights reserved.
+      </p>
+
+      <p>
+        Building Businesses. Connecting Opportunities.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+    });
+
+    // Close mobile navigation after selecting a section
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+      });
+    });
+
+    // Automatic copyright year
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
 </html>
-```
